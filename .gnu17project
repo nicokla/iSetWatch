@@ -1,0 +1,216 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<?gnu17-eclipse version="2.3.0"?>
+
+<gnu17project>
+<general config="default" cpuName="S1C17W15" cpuType="STD" memoryModel="REGULAR" selectFlsPath="/mcu_model/17W15/fls/fls17W15.elf" useCoproLib="false"/>
+<make>
+<makeSetting buildGoal="1" is2passBuild="true" makefile="150314-2-SeikoStandard_gnu17IDE" name="150314-2-SeikoStandard">
+<environments/>
+<compiler command="xgcc">
+<option name="gnu17compiler.knjfilt" value="false"/>
+<option name="gnu17compiler.optimizeLevel" value="1"/>
+<option name="gnu17compiler.includePath" value="$(TOOL_DIR)/include;inc/class;inc;inc/reg;inc/hardware;inc/modes;"/>
+<option name="gnu17compiler.symbols" value=""/>
+<option name="gnu17compiler.noBuiltIn" value="true"/>
+<option name="gnu17compiler.userOps" value="-Wall -Werror-implicit-function-declaration "/>
+</compiler>
+<assembler command="xgcc">
+<option name="gnu17asm.userOpts" value=" "/>
+</assembler>
+<linker command="ld">
+<option name="gnu17ld.genMap" value="true"/>
+<option name="gnu17ld.noAlignCheck" value="true"/>
+<option name="gnu17ld.userOps" value="-T 150314-2-SeikoStandard_gnu17IDE.lds"/>
+<option name="gnu17ld.libraries" value="$(TOOL_DIR)/lib/24bit/libstdio.a;$(TOOL_DIR)/lib/24bit/libc.a;$(TOOL_DIR)/lib/24bit/libgcc.a;$(TOOL_DIR)/lib/24bit/libc.a;"/>
+</linker>
+<vecChecker command="vecChecker">
+<option name="gnu17VecChecker.on" value="false"/>
+<option name="gnu17VecChecker.misc" value="-t symtable.out -r raw.out"/>
+</vecChecker>
+</makeSetting>
+</make>
+<parameterMap>
+<parSetting name="150314-2-SeikoStandard_gnu17IDE">
+<parComment/>
+<parArea access="word" areaType="RAM" endAddr="fbf" startAddr="0" useBE="false" waitRead="0" waitWrite="0">
+<comment>Internal RAM</comment>
+</parArea>
+<parArea access="halfword" areaType="IO" endAddr="5fff" startAddr="4000" useBE="false" waitRead="0" waitWrite="0">
+<comment>Peripheral circuit area</comment>
+</parArea>
+<parArea access="halfword" areaType="RAM" endAddr="7021" startAddr="7000" useBE="false" waitRead="0" waitWrite="0">
+<comment>Display data area0</comment>
+</parArea>
+<parArea access="halfword" areaType="RAM" endAddr="7061" startAddr="7040" useBE="false" waitRead="0" waitWrite="0">
+<comment>Display data area1</comment>
+</parArea>
+<parArea access="halfword" areaType="ROM" endAddr="17fff" startAddr="8000" useBE="false" waitRead="0" waitWrite="0">
+<comment>Flash area</comment>
+</parArea>
+<parArea access="word" areaType="IO" endAddr="ffffff" startAddr="fffc00" useBE="false" waitRead="0" waitWrite="0">
+<comment>Reserved for core I/O area</comment>
+</parArea>
+<parArea areaType="STACK" endAddr="fbf" startAddr="0">
+<comment>Stack area</comment>
+</parArea>
+</parSetting>
+</parameterMap>
+<linkerscript name="150314-2-SeikoStandard_gnu17IDE" stackPointer="fc0">
+<sections>
+<section autoUpdate="true" fileAttribute=".bss" lmaEqualsVma="true" sectionName=".bss" vma="0">
+<object file="src/boot.o"/>
+<object file="src/class/ecranPourClignotements.o"/>
+<object file="src/class/fileDActions.o"/>
+<object file="src/class/que.o"/>
+<object file="src/class/time.o"/>
+<object file="src/class/varAff.o"/>
+<object file="src/globalVar.o"/>
+<object file="src/hardware/backlight.o"/>
+<object file="src/hardware/buzzer.o"/>
+<object file="src/hardware/clg.o"/>
+<object file="src/hardware/lcd8a.o"/>
+<object file="src/hardware/rtca.o"/>
+<object file="src/hardware/t16_ch0_smallDelays.o"/>
+<object file="src/hardware/t16_ch2_appuiLongBouton.o"/>
+<object file="src/hardware/t16b_ch0_doubleAppui.o"/>
+<object file="src/hardware/t16b_ch1_verySmallDelays.o"/>
+<object file="src/hardware/uart.o"/>
+<object file="src/hardware/wdt.o"/>
+<object file="src/init.o"/>
+<object file="src/interruptBoutons.o"/>
+<object file="src/interruptTime.o"/>
+<object file="src/main.o"/>
+<object file="src/modes/alarm.o"/>
+<object file="src/modes/bluetooth.o"/>
+<object file="src/modes/chrono.o"/>
+<object file="src/modes/compteur.o"/>
+<object file="src/modes/t16_ch1_countdown.o"/>
+<object file="src/modes/tennis.o"/>
+<object file="src/modes/test.o"/>
+<object file="src/modes/watch.o"/>
+<object file="$(TOOL_DIR)/lib/24bit/libstdio.a"/>
+<object file="$(TOOL_DIR)/lib/24bit/libc.a"/>
+<object file="$(TOOL_DIR)/lib/24bit/libgcc.a"/>
+<object file="$(TOOL_DIR)/lib/24bit/libc.a"/>
+</section>
+<section autoUpdate="true" fileAttribute=".data" lmaEqualsVma="false" lmaSectionName=".rodata" sectionName=".data" vmaSectionName=".bss">
+<object file="src/boot.o"/>
+<object file="src/class/ecranPourClignotements.o"/>
+<object file="src/class/fileDActions.o"/>
+<object file="src/class/que.o"/>
+<object file="src/class/time.o"/>
+<object file="src/class/varAff.o"/>
+<object file="src/globalVar.o"/>
+<object file="src/hardware/backlight.o"/>
+<object file="src/hardware/buzzer.o"/>
+<object file="src/hardware/clg.o"/>
+<object file="src/hardware/lcd8a.o"/>
+<object file="src/hardware/rtca.o"/>
+<object file="src/hardware/t16_ch0_smallDelays.o"/>
+<object file="src/hardware/t16_ch2_appuiLongBouton.o"/>
+<object file="src/hardware/t16b_ch0_doubleAppui.o"/>
+<object file="src/hardware/t16b_ch1_verySmallDelays.o"/>
+<object file="src/hardware/uart.o"/>
+<object file="src/hardware/wdt.o"/>
+<object file="src/init.o"/>
+<object file="src/interruptBoutons.o"/>
+<object file="src/interruptTime.o"/>
+<object file="src/main.o"/>
+<object file="src/modes/alarm.o"/>
+<object file="src/modes/bluetooth.o"/>
+<object file="src/modes/chrono.o"/>
+<object file="src/modes/compteur.o"/>
+<object file="src/modes/t16_ch1_countdown.o"/>
+<object file="src/modes/tennis.o"/>
+<object file="src/modes/test.o"/>
+<object file="src/modes/watch.o"/>
+<object file="$(TOOL_DIR)/lib/24bit/libstdio.a"/>
+<object file="$(TOOL_DIR)/lib/24bit/libc.a"/>
+<object file="$(TOOL_DIR)/lib/24bit/libgcc.a"/>
+<object file="$(TOOL_DIR)/lib/24bit/libc.a"/>
+</section>
+<section autoUpdate="false" fileAttribute=".rodata" lmaEqualsVma="true" sectionName=".vector" vma="8000">
+<object file="src/boot.o"/>
+</section>
+<section autoUpdate="true" fileAttribute=".text" lmaEqualsVma="true" sectionName=".text" vmaSectionName=".vector">
+<object file="src/boot.o"/>
+<object file="src/class/ecranPourClignotements.o"/>
+<object file="src/class/fileDActions.o"/>
+<object file="src/class/que.o"/>
+<object file="src/class/time.o"/>
+<object file="src/class/varAff.o"/>
+<object file="src/globalVar.o"/>
+<object file="src/hardware/backlight.o"/>
+<object file="src/hardware/buzzer.o"/>
+<object file="src/hardware/clg.o"/>
+<object file="src/hardware/lcd8a.o"/>
+<object file="src/hardware/rtca.o"/>
+<object file="src/hardware/t16_ch0_smallDelays.o"/>
+<object file="src/hardware/t16_ch2_appuiLongBouton.o"/>
+<object file="src/hardware/t16b_ch0_doubleAppui.o"/>
+<object file="src/hardware/t16b_ch1_verySmallDelays.o"/>
+<object file="src/hardware/uart.o"/>
+<object file="src/hardware/wdt.o"/>
+<object file="src/init.o"/>
+<object file="src/interruptBoutons.o"/>
+<object file="src/interruptTime.o"/>
+<object file="src/main.o"/>
+<object file="src/modes/alarm.o"/>
+<object file="src/modes/bluetooth.o"/>
+<object file="src/modes/chrono.o"/>
+<object file="src/modes/compteur.o"/>
+<object file="src/modes/t16_ch1_countdown.o"/>
+<object file="src/modes/tennis.o"/>
+<object file="src/modes/test.o"/>
+<object file="src/modes/watch.o"/>
+<object file="$(TOOL_DIR)/lib/24bit/libstdio.a"/>
+<object file="$(TOOL_DIR)/lib/24bit/libc.a"/>
+<object file="$(TOOL_DIR)/lib/24bit/libgcc.a"/>
+<object file="$(TOOL_DIR)/lib/24bit/libc.a"/>
+</section>
+<section autoUpdate="true" fileAttribute=".rodata" lmaEqualsVma="true" sectionName=".rodata" vmaSectionName=".text">
+<object file="src/class/ecranPourClignotements.o"/>
+<object file="src/class/fileDActions.o"/>
+<object file="src/class/que.o"/>
+<object file="src/class/time.o"/>
+<object file="src/class/varAff.o"/>
+<object file="src/globalVar.o"/>
+<object file="src/hardware/backlight.o"/>
+<object file="src/hardware/buzzer.o"/>
+<object file="src/hardware/clg.o"/>
+<object file="src/hardware/lcd8a.o"/>
+<object file="src/hardware/rtca.o"/>
+<object file="src/hardware/t16_ch0_smallDelays.o"/>
+<object file="src/hardware/t16_ch2_appuiLongBouton.o"/>
+<object file="src/hardware/t16b_ch0_doubleAppui.o"/>
+<object file="src/hardware/t16b_ch1_verySmallDelays.o"/>
+<object file="src/hardware/uart.o"/>
+<object file="src/hardware/wdt.o"/>
+<object file="src/init.o"/>
+<object file="src/interruptBoutons.o"/>
+<object file="src/interruptTime.o"/>
+<object file="src/main.o"/>
+<object file="src/modes/alarm.o"/>
+<object file="src/modes/bluetooth.o"/>
+<object file="src/modes/chrono.o"/>
+<object file="src/modes/compteur.o"/>
+<object file="src/modes/t16_ch1_countdown.o"/>
+<object file="src/modes/tennis.o"/>
+<object file="src/modes/test.o"/>
+<object file="src/modes/watch.o"/>
+<object file="$(TOOL_DIR)/lib/24bit/libstdio.a"/>
+<object file="$(TOOL_DIR)/lib/24bit/libc.a"/>
+<object file="$(TOOL_DIR)/lib/24bit/libgcc.a"/>
+<object file="$(TOOL_DIR)/lib/24bit/libc.a"/>
+</section>
+</sections>
+</linkerscript>
+<flashProtect>
+<protectSetting bitNum="0" prtAddrRead="0" prtAddrWrite="0" useAttribute="false" useProtect="false"/>
+</flashProtect>
+<runGDB name="150314-2-SeikoStandard_gnu17IDE">
+<debugger type="ICDMini" useVectorAddr="true" vectorAddr="8000">
+<connection debugRamAddr="0" port="USB"/>
+</debugger>
+</runGDB>
+</gnu17project>
